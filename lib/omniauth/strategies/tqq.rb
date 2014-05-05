@@ -40,6 +40,7 @@ module OmniAuth
           :name => raw_info['data']['name'],
           :location => raw_info['data']['location'],
           :image => (raw_info['data']['head']+'/40' if raw_info['data']['head'].present?),
+          :gender => raw_info['data']['sex'] == 1 ? 'm' : (raw_info['data']['sex'] == 2 ? 'f' : ''),
           :description => raw_info['data']['introduction'],
           :urls => {
             'Tqq' => 't.qq.com/' + raw_info['data']['name']
